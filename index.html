@@ -192,5 +192,19 @@
             window.dispatchEvent(new Event('scroll'));
         });
     </script>
+    </script>
+
+    <script>
+        const video = document.querySelector('.hero-video');
+        if (video) {
+            video.addEventListener('ended', function () {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+        }
+    </script>
+
+</body>
+</html>
 </body>
 </html>
