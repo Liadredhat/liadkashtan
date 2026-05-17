@@ -45,20 +45,22 @@ body.light-theme {
 
 /* SECTION 1: HERO */
 .hero-section {
-    background-color: var(--bg-dark);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('https://media.istockphoto.com/id/1988153903/photo/whats-your-story-question.jpg?s=2048x2048&w=is&k=20&c=d-emZtPS6ljAm591WNh5ZBGMO2-52TFJjsaF3A7Zwac=');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--text-light);
-    min-height: 50vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    justify-content: flex-start;
+    padding: 60px 10%;
 }
 
 .hero-container {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 5rem;
+    display: block;
     width: 100%;
-    align-items: center;
+    max-width: 850px;
 }
 
 .hero-brand {
@@ -86,23 +88,9 @@ body.light-theme {
     font-size: clamp(1.1rem, 1.5vw, 1.35rem);
     font-weight: 600;
     max-width: 880px;
-    color: #94a3b8;
+    color: #e2e8f0;
     line-height: 1.65;
 }
-
-.hero-image-block {
-    height: 45vh;
-    overflow: hidden;
-    border-radius: 6px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-}
-
-.hero-image-block img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* SECTION 2: SOLUTIONS */
 .solutions-section {
     background: transparent;
