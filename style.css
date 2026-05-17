@@ -59,14 +59,14 @@ body.light-theme {
 .hero-video {
     position: absolute;
     top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
+    left: 50%; /* מחזיר את הוידאו למרכז המדויק של המסך */
+    min-width: 100%; /* פורס אותו על כל רוחב ה-Hero */
+    min-height: 100%; /* פורס אותו על כל גובה ה-Hero */
     width: auto;
     height: auto;
     z-index: 1;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
+    transform: translate(-50%, -50%); /* ממרכז אותו פיקס מכל הכיוונים */
+    object-fit: cover; /* מוודא שהוא ימלא את כל השטח בלי להתעוות */
 }
 
 .hero-section::before {
