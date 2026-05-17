@@ -58,14 +58,30 @@ body.light-theme {
 
 .hero-video {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* This overlay keeps the text readable and pushes the video to the background */
+.hero-section::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    object-fit: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7));
+    z-index: 2;
 }
 
+/* This forces the text block to float on top of the video */
 .hero-container {
     position: relative;
     z-index: 3;
