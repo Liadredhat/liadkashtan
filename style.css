@@ -69,7 +69,6 @@ body.light-theme {
     object-fit: cover;
 }
 
-/* This overlay keeps the text readable and pushes the video to the background */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -81,7 +80,6 @@ body.light-theme {
     z-index: 2;
 }
 
-/* This forces the text block to float on top of the video */
 .hero-container {
     position: relative;
     z-index: 3;
