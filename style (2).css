@@ -1,0 +1,313 @@
+:root {
+    --bg-dark: #0a0a0a;
+    --text-light: #f5f5f7;
+    --bg-light: #fcfbfa;
+    --text-dark: #1c1c1e;
+    --text-muted: #636366;
+    --accent-sage: rgba(140, 169, 151, 0.18);
+    --accent-blue: rgba(144, 164, 174, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+    transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+/* Ambient Blobs Background Effect */
+.ambient-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    mix-blend-mode: multiply;
+    animation: floatAmbient 25s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+    top: 20%;
+    right: 10%;
+    width: 450px;
+    height: 450px;
+    background-color: var(--accent-sage);
+}
+
+.blob-2 {
+    bottom: 15%;
+    left: 5%;
+    width: 500px;
+    height: 500px;
+    background-color: var(--accent-blue);
+    animation-delay: -5s;
+}
+
+@keyframes floatAmbient {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(60px, -40px) scale(1.1); }
+    100% { transform: translate(-40px, 50px) scale(0.9); }
+}
+
+/* Layout & Sections */
+section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8% 10%;
+    z-index: 2;
+}
+
+body.light-theme {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+body.light-theme .ambient-glow {
+    opacity: 1;
+}
+
+/* Section 1: Hero */
+.hero-section {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hero-brand {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.15;
+    max-width: 900px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-title span {
+    font-style: italic;
+    display: block;
+    color: #d1d1d6;
+    margin-bottom: 0.5rem;
+}
+
+.hero-hook {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    max-width: 650px;
+    color: #aeaeb2;
+    line-height: 1.6;
+}
+
+/* Section 2: Execution & Solutions */
+.solutions-section {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.section-header {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+body:not(.light-theme) .section-header {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.solutions-grid {
+    display: block; 
+}
+
+.solution-block {
+    margin-bottom: 6rem;
+    max-width: 800px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.solution-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.solution-title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin-bottom: 1.2rem;
+    color: inherit;
+}
+
+.solution-desc {
+    font-size: clamp(1.05rem, 1.5vw, 1.15rem);
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--text-dark);
+}
+
+body:not(.light-theme) .solution-desc {
+    color: #c7c7cc;
+}
+
+/* Section 3: Background & Context */
+.context-section {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 85vh;
+}
+
+.context-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 2rem;
+}
+
+.context-body {
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 850px;
+    color: #e5e5ea;
+}
+
+.context-body strong {
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Section 4: Contact */
+.contact-section {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 90vh;
+}
+
+.contact-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.contact-title {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    margin-bottom: 2.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    font-family: 'Inter', sans-serif;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 0.8rem 0;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-bottom: 1px solid var(--text-dark);
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.submit-btn {
+    font-family: 'Cormorant Garamond', serif;
+    align-self: flex-start;
+    background-color: var(--text-dark);
+    color: var(--bg-light);
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+footer {
+    margin-top: 4rem;
+    display: flex;
+    gap: 2rem;
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: var(--text-dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-dark);
+    padding-bottom: 2px;
+    transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 15% 6%;
+    }
+    .solution-block {
+        margin-bottom: 4rem;
+    }
+}
