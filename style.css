@@ -55,16 +55,17 @@ body.light-theme {
     padding: 60px 10%;
     overflow: hidden;
 }
+
 .hero-video {
     position: absolute;
-    top: 0%;
-    left: 63%; 
-    min-width: 130%; 
-    min-height: 125%;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
     width: auto;
     height: auto;
     z-index: 1;
-    transform: translate(-50%,);
+    transform: translate(-50%, -50%);
     object-fit: cover;
 }
 
