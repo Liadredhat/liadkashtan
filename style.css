@@ -43,21 +43,46 @@ body.light-theme {
     color: var(--text-dark);
 }
 
-/* SECTION 1: HERO */
+/* SECTION 1: HERO WITH VIDEO BACKGROUND */
 .hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('https://pixabay.com/images/download/trixieliko-book-2341083_1920.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+    background-color: var(--bg-dark);
     color: var(--text-light);
     min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 60px 10%;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 63%; 
+    min-width: 130%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7));
+    z-index: 2;
 }
 
 .hero-container {
+    position: relative;
+    z-index: 3;
     display: block;
     width: 100%;
     max-width: 850px;
