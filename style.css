@@ -34,7 +34,7 @@ h1, h2, h3 {
 
 section {
     position: relative;
-    padding: 140px 10%;
+    padding: 90px 10%;
     z-index: 2;
 }
 
@@ -47,7 +47,7 @@ body.light-theme {
 .hero-section {
     background-color: var(--bg-dark);
     color: var(--text-light);
-    min-height: 100vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -91,7 +91,7 @@ body.light-theme {
 }
 
 .hero-image-block {
-    height: 68vh;
+    height: 55vh;
     overflow: hidden;
     border-radius: 6px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
