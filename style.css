@@ -43,7 +43,7 @@ body.light-theme {
     color: var(--text-dark);
 }
 
-/* SECTION 1: HERO WITH VIDEO BACKGROUND */
+/* SECTION 1: HERO WITH FULL VIDEO BACKGROUND */
 .hero-section {
     position: relative;
     background-color: var(--bg-dark);
@@ -59,14 +59,14 @@ body.light-theme {
 .hero-video {
     position: absolute;
     top: 50%;
-    left: 50%; /* מחזיר את הוידאו למרכז המדויק של המסך */
-    min-width: 100%; /* פורס אותו על כל רוחב ה-Hero */
-    min-height: 100%; /* פורס אותו על כל גובה ה-Hero */
-    width: auto;
-    height: auto;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     z-index: 1;
-    transform: translate(-50%, -50%); /* ממרכז אותו פיקס מכל הכיוונים */
-    object-fit: cover; /* מוודא שהוא ימלא את כל השטח בלי להתעוות */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
 .hero-section::before {
@@ -87,7 +87,6 @@ body.light-theme {
     width: 100%;
     max-width: 850px;
 }
-
 .hero-brand {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 1.4rem;
