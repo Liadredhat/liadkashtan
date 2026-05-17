@@ -47,7 +47,7 @@ body.light-theme {
 .hero-section {
     background-color: var(--bg-dark);
     color: var(--text-light);
-    min-height: 75vh;
+    min-height: 50vh;
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -91,7 +91,7 @@ body.light-theme {
 }
 
 .hero-image-block {
-    height: 55vh;
+    height: 45vh;
     overflow: hidden;
     border-radius: 6px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
