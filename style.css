@@ -43,13 +43,9 @@ body.light-theme {
     color: var(--text-dark);
 }
 
-/* SECTION 1: HERO WITH VIDEO AND BACKUP IMAGE */
+/* SECTION 1: HERO WITH VIDEO BACKGROUND */
 .hero-section {
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url('hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     background-color: var(--bg-dark);
     color: var(--text-light);
     min-height: 60vh;
