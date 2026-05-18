@@ -90,13 +90,12 @@ body.light-theme {
     max-width: 850px;
 }
 .hero-brand {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    font-size: 1.6rem !important; /* הגדלת הפונט */
+    font-weight: 600;
+    text-transform: none !important; /* ביטול האותיות הגדולות הכפויות */
+    letter-spacing: 1px;
+    margin-bottom: 20px;
     color: var(--text-light);
-    margin-bottom: 3.5rem;
-    text-transform: uppercase;
 }
 
 .hero-title {
@@ -154,21 +153,21 @@ body.light-theme {
 }
 
 .solution-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.card-content, .card-media {
+    flex: 1 !important;
+    width: 50% !important;
 }
 
 .solution-card.row-reverse {
-    direction: rtl;
-}
-
-.solution-card.row-reverse .card-content {
-    direction: ltr;
+    flex-direction: row-reverse !important;
 }
 
 .solution-card.visible {
