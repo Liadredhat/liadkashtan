@@ -383,27 +383,54 @@ footer a:hover {
         padding: 90px 6%;
     }
     .solutions-grid {
-        /* DYNAMIC SCROLL EFFECT FOR ALL SECTIONS */
-section, .context-section, .contact-section, .solutions-section {
+/* ANIMATION FOR IMAGES (ZOOM & SMOOTH ENERGETIC ENTRANCE) */
+.card-media {
+    opacity: 0;
+    transform: scale(0.9) translateY(40px);
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-in-out;
+}
+
+.solution-card.visible .card-media, 
+.solution-card:hover .card-media {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.card-media img {
+    transform: scale(1.15);
+    transition: transform 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.solution-card.visible .card-media img {
+    transform: scale(1);
+}
+
+.card-media img:hover {
+    transform: scale(1.05);
+}
+
+/* FIXED SCROLL TRANSITION (TARGETING ACTIVE CONTAINERS) */
+.solution-card {
     background-color: #000000 !important;
-    color: #ffffff !important;
+    padding: 40px;
+    border-radius: 12px;
     transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
 }
 
-section.visible, .context-section.visible, .contact-section.visible, .solutions-section.visible {
+.solution-card.visible {
     background-color: #ffffff !important;
-    color: #000000 !important;
 }
 
-/* Ensure headings and descriptions adjust cleanly during the transition */
-section.visible h2, section.visible h1, section.visible p, section.visible .solution-title, section.visible .solution-desc {
-    color: #000000 !important;
-    transition: color 0.6s ease-in-out;
-}
-
-section:not(.visible) h2, section:not(.visible) h1, section:not(.visible) p, section:not(.visible) .solution-title, section:not(.visible) .solution-desc {
+.solution-card .solution-title, 
+.solution-card .solution-desc {
     color: #ffffff !important;
+    transition: color 0.8s ease-in-out;
 }
-        gap: 7rem;
-    }
+
+.solution-card.visible .solution-title {
+    color: #000000 !important;
+}
+
+.solution-card.visible .solution-desc {
+    color: #475569 !important;
 }
