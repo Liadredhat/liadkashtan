@@ -194,15 +194,19 @@
     </script>
     </script>
 
-    <script>
-        const video = document.querySelector('.hero-video');
-        if (video) {
-            video.addEventListener('ended', function () {
+<script>
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) {
+        // Monitor the video playback time
+        heroVideo.addEventListener('timeupdate', function() {
+            // If the video is within 0.3 seconds of ending, loop it early
+            if (this.duration && this.currentTime >= this.duration - 0.3) {
                 this.currentTime = 0;
                 this.play();
-            }, false);
-        }
-    </script>
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
