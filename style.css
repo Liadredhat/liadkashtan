@@ -46,7 +46,7 @@ body.light-theme {
 /* SECTION 1: HERO WITH VIDEO BACKGROUND */
 .hero-section {
     position: relative;
-    background-color: #0d0e10 !important;
+    background-color: #000000 !important;
     color: var(--text-light);
     min-height: 60vh;
     display: flex;
@@ -67,6 +67,7 @@ body.light-theme {
     z-index: 1;
     transform: translate(-50%, -50%);
     object-fit: cover;
+    background-color: #000000 !important; /* Hides the gray loop transition frame inside the player */
 }
 
 /* 65% dark transparent layer to make the video sit in the background */
