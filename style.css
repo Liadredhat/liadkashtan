@@ -210,6 +210,21 @@ body:not(.light-theme) .solution-desc {
     height: 100%;
     object-fit: cover;
     transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    /* DESIGN UPDATES: FONTS AND UPPERCASE FIXES */
+.hero-brand {
+    font-size: 1.8rem !important;
+    font-weight: 600;
+    text-transform: none !important;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.solutions-section h2, .section-title, .section-header {
+    font-size: 3.5rem !important;
+    text-transform: none !important;
+    margin-bottom: 40px;
+}
 }
 
 .solution-card:hover .card-media img {
