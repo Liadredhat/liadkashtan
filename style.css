@@ -383,15 +383,14 @@ footer a:hover {
         padding: 90px 6%;
     }
     .solutions-grid {
-/* ANIMATION FOR IMAGES (ZOOM & SMOOTH ENERGETIC ENTRANCE) */
+/* LIVELY ANIMATION AND MOVE FOR THE IMAGES */
 .card-media {
     opacity: 0;
     transform: scale(0.9) translateY(40px);
     transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-in-out;
 }
 
-.solution-card.visible .card-media, 
-.solution-card:hover .card-media {
+.solution-card.visible .card-media {
     opacity: 1;
     transform: scale(1) translateY(0);
 }
@@ -409,18 +408,20 @@ footer a:hover {
     transform: scale(1.05);
 }
 
-/* FIXED SCROLL TRANSITION (TARGETING ACTIVE CONTAINERS) */
+/* INDIVIDUAL CARD SCROLL BACKGROUND TRANSITION (BLACK TO WHITE) */
 .solution-card {
     background-color: #000000 !important;
     padding: 40px;
     border-radius: 12px;
-    transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+    transition: background-color 0.9s cubic-bezier(0.25, 1, 0.5, 1), color 0.9s ease-in-out;
 }
 
+/* When you scroll into the specific item, it fades smoothly to white */
 .solution-card.visible {
     background-color: #ffffff !important;
 }
 
+/* Typography color shifts inside the cards */
 .solution-card .solution-title, 
 .solution-card .solution-desc {
     color: #ffffff !important;
@@ -430,7 +431,6 @@ footer a:hover {
 .solution-card.visible .solution-title {
     color: #000000 !important;
 }
-
 .solution-card.visible .solution-desc {
     color: #475569 !important;
 }
